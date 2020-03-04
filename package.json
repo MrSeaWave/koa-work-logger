@@ -1,0 +1,58 @@
+{
+  "name": "@sea/koa-work-logger",
+  "version": "0.0.1",
+  "description": "koa日志",
+  "main": "lib/index.js",
+  "unpkg": "dist/index.js",
+  "module": "es/index.js",
+  "scripts": {
+    "lint": "eslint --ext .js src ",
+    "precommit-msg": "echo 'Pre-commit checks...' && exit 0",
+    "test": "node ./test/logger.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrSeaWave/koa-work-logger.git"
+  },
+  "keywords": [
+    "koa",
+    "logger",
+    "sea"
+  ],
+  "files": [
+    "dist",
+    "lib",
+    "es"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrSeaWave/koa-work-logger/issues"
+  },
+  "homepage": "https://github.com/MrSeaWave/koa-work-logger#readme",
+  "pre-commit": [
+    "precommit-msg",
+    "lint"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.8.6",
+    "@babel/polyfill": "^7.8.3",
+    "@babel/preset-env": "^7.8.6",
+    "@babel/register": "^7.8.6",
+    "@hapi/boom": "^9.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "koa": "^2.11.0",
+    "koa-route": "^3.2.0",
+    "pre-commit": "^1.2.2",
+    "sinon": "^9.0.0",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "log4js": "^6.1.2"
+  }
+}

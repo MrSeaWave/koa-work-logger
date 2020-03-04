@@ -1,0 +1,7 @@
+# 备注
+
+Jest是FaceBook推出的一个针对JavaScript进行单元测试的库，它提供了断言、函数模拟等API来对你自己编写的业务逻辑代码进行测试后
+
+Sinon.js是一个用来做独立测试和模拟的JavaScript库。它在单元测试的编写中通常用来模拟HTTP等相关请求
+
+Supertest 来测试接口

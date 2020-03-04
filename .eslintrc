@@ -1,0 +1,9 @@
+{
+  "extends": "standard",
+  "rules": {
+    // 禁止使用var
+    "no-var": "error",
+    // 使用分号
+    "semi": ["error", "always"]
+  }
+}
