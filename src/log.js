@@ -1,4 +1,5 @@
 import logUtil from './logUtil';
+import chalk from 'chalk';
 
 // 如果错误被try...catch捕获，就不会触发error事件。这时，必须调用ctx.app.emit()，手动释放error事件，才能让监听函数生效
 const logger = async (ctx, next) => {
@@ -12,7 +13,10 @@ const logger = async (ctx, next) => {
     ms = new Date() - start;
 
     // 控制台打印信息，也可用console.log
-    console.log(`${Date.now()} ${ctx.request.method} ${ctx.request.url}`);
+    console.log(
+      chalk.blue('%s') + ` ${ctx.request.method} ${ctx.request.url}`,
+      Date.now()
+    );
 
     // 记录响应日志
     logUtil.logResponse(ctx, ms);
