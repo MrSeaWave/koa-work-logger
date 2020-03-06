@@ -1,6 +1,9 @@
 {
   "name": "@sea/koa-work-logger",
   "version": "0.0.1",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "koa日志",
   "main": "lib/index.js",
   "unpkg": "dist/index.js",
@@ -25,8 +28,8 @@
     "lib",
     "es"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "MrSeaWave",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/MrSeaWave/koa-work-logger/issues"
   },
@@ -68,6 +71,7 @@
     "supertest": "^4.0.2"
   },
   "dependencies": {
+    "app-root-path": "^3.0.0",
     "chalk": "^3.0.0",
     "log4js": "^6.1.2"
   }

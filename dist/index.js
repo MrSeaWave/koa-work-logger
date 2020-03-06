@@ -1,10 +1,11 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('log4js'), require('fs'), require('path'), require('chalk')) :
-  typeof define === 'function' && define.amd ? define(['exports', 'log4js', 'fs', 'path', 'chalk'], factory) :
-  (global = global || self, factory(global.Index = {}, global.log4js, global.fs, global.path, global.chalk));
-}(this, (function (exports, log4js, fs, path, chalk) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('log4js'), require('fs'), require('app-root-path'), require('path'), require('chalk')) :
+  typeof define === 'function' && define.amd ? define(['exports', 'log4js', 'fs', 'app-root-path', 'path', 'chalk'], factory) :
+  (global = global || self, factory(global.Index = {}, global.log4js, global.fs, global['app-root-path'], global.path, global.chalk));
+}(this, (function (exports, log4js, fs, appRoot, path, chalk) { 'use strict';
 
   fs = fs && fs.hasOwnProperty('default') ? fs['default'] : fs;
+  appRoot = appRoot && appRoot.hasOwnProperty('default') ? appRoot['default'] : appRoot;
   path = path && path.hasOwnProperty('default') ? path['default'] : path;
   chalk = chalk && chalk.hasOwnProperty('default') ? chalk['default'] : chalk;
 
@@ -50,7 +51,9 @@
 
   var rootPath = pathResolve(__dirname); // TODO 待更改目录，由外界传入，
   // TODO 可以考虑使用app-root-path
-  // 日志根目录，
+
+  console.log('__dirname', __dirname);
+  console.log('app-root-path', appRoot); // 日志根目录，
 
   var baseLogPath = pathResolve(__dirname, '../logs'); // 错误日志目录
 

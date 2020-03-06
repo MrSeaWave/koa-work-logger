@@ -1,5 +1,6 @@
 import { configure, getLogger } from 'log4js';
 import fs from 'fs';
+import appRoot from 'app-root-path';
 import path from 'path';
 import chalk from 'chalk';
 
@@ -45,7 +46,9 @@ var pathJoin = path.join; // eslint-disable-next-line no-unused-vars
 
 var rootPath = pathResolve(__dirname); // TODO 待更改目录，由外界传入，
 // TODO 可以考虑使用app-root-path
-// 日志根目录，
+
+console.log('__dirname', __dirname);
+console.log('app-root-path', appRoot); // 日志根目录，
 
 var baseLogPath = pathResolve(__dirname, '../logs'); // 错误日志目录
 

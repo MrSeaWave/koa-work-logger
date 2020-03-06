@@ -1,3 +1,4 @@
+import appRoot from 'app-root-path';
 import path from 'path';
 const pathResolve = path.resolve;
 // eslint-disable-next-line no-unused-vars
@@ -7,6 +8,8 @@ const rootPath = pathResolve(__dirname);
 
 // TODO 待更改目录，由外界传入，
 // TODO 可以考虑使用app-root-path
+console.log('__dirname', __dirname);
+console.log('app-root-path', appRoot);
 // 日志根目录，
 const baseLogPath = pathResolve(__dirname, '../logs');
 

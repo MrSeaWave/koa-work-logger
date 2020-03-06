@@ -46,9 +46,15 @@ const getPlugins = env => {
 const config = {
   input: 'src/index.js',
   output: {
-    globals: { log4js: 'log4js', chalk: 'chalk', fs: 'fs', path: 'path' }
+    globals: {
+      log4js: 'log4js',
+      chalk: 'chalk',
+      'app-root-path': 'app-root-path',
+      fs: 'fs',
+      path: 'path'
+    }
   },
-  external: ['log4js', 'chalk', ...builtins],
+  external: ['log4js', 'chalk', 'app-root-path', ...builtins],
   plugins: getPlugins(process.env.BUILD_ENV)
 };
 
