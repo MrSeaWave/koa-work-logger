@@ -49,13 +49,9 @@
 
   var pathJoin = path.join; // eslint-disable-next-line no-unused-vars
 
-  var rootPath = pathResolve(__dirname); // TODO 待更改目录，由外界传入，
-  // TODO 可以考虑使用app-root-path
+  var rootPath = pathResolve(__dirname); // 在根目录下创建日志文件夹
 
-  console.log('__dirname', __dirname);
-  console.log('app-root-path', appRoot); // 日志根目录，
-
-  var baseLogPath = pathResolve(__dirname, '../logs'); // 错误日志目录
+  var baseLogPath = pathResolve(appRoot.path, './logs'); // 错误日志目录
 
   var errorPath = '/error'; // 错误日志文件名
 
