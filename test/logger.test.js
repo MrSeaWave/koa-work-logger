@@ -46,7 +46,7 @@ describe('koa-worker-logger', () => {
   it('测试请求带query', async done => {
     // expect.assertions(2);
 
-    const res = await request(app.callback()).get('/200?Id=1');
+    await request(app.callback()).get('/200?Id=1');
     expect(log.called).toBeTruthy();
     done();
   });
@@ -59,6 +59,15 @@ describe('koa-worker-logger', () => {
       .send({ name: 'JOHN' })
       .set('Accept', 'application/json');
     expect(res.body).toEqual({ name: 'JOHN' });
+    expect(log.called).toBeTruthy();
+    done();
+  });
+
+  it('测试调用logUtil方法', async done => {
+    // expect.assertions(2);
+
+    const res = await request(app.callback()).get('/outside');
+    expect(res.text).toEqual('调用成功');
     expect(log.called).toBeTruthy();
     done();
   });

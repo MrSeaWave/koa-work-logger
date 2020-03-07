@@ -35,6 +35,7 @@ initLogPath();
 
 const errorLogger = getLogger('errorLogger');
 const resLogger = getLogger('resLogger');
+const outsideLogger = getLogger('outsideLogger');
 
 // 封装错误日志
 logUtil.logError = function (ctx, error, resTime) {
@@ -48,6 +49,11 @@ logUtil.logResponse = function (ctx, resTime) {
   if (ctx) {
     resLogger.info(formatRes(ctx, resTime));
   }
+};
+
+// 外部调用的日志打印封装
+logUtil.logOutside = function (msg) {
+  outsideLogger.info(formatOutside(msg));
 };
 
 // 格式化响应日志
@@ -122,4 +128,19 @@ const formatReqLog = (req, resTime) => {
   return logText;
 };
 
+const formatOutside = msg => {
+  let logText = '';
+
+  // 外部调用打印信息开始
+  logText += '\n*************** outside log start ***************\n';
+  // 外部打印信息
+  logText += `${msg}\n`;
+
+  // 错误信息结束
+  logText += '*************** outside log end ***************\n';
+
+  return logText;
+};
+
+export const logOutside = logUtil.logOutside;
 export default logUtil;
