@@ -6,13 +6,16 @@ require('@babel/register');
 require('@babel/polyfill');
 
 const Koa = require('koa');
+const koaBody = require('koa-body');
 const Boom = require('@hapi/boom');
 const _ = require('koa-route');
 const { koaLogger } = require('../src/index');
 
 module.exports = function (opts) {
   const app = new Koa();
-  app.use(koaLogger);
+  app.use(koaLogger(opts));
+
+  app.use(koaBody());
 
   app.use(
     _.get('/users', function (ctx) {
@@ -23,6 +26,18 @@ module.exports = function (opts) {
   app.use(
     _.get('/200', function (ctx) {
       ctx.body = 'hello world';
+    })
+  );
+
+  app.use(
+    _.get('/200?Id=1', function (ctx) {
+      ctx.body = 'hello world';
+    })
+  );
+
+  app.use(
+    _.post('/post-200', function (ctx) {
+      ctx.body = ctx.request.body;
     })
   );
 
