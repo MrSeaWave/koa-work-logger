@@ -44,3 +44,9 @@ app.use(
   })
 );
 ```
+
+## EG
+
+```bash
+$ node test/state.test.js
+```
