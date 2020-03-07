@@ -67,7 +67,7 @@ const handleLogger = ({ succeedOnChange, errOnChange }) => async (
 
 /**
  * @desc 日志
- * @param {Object} opts - 参数
+ * @param {Object} [opts] - 参数
  * @param {function} [opts.succeedOnChange] - 响应日志的回调
  * @param {function} [opts.errOnChange] - 错误日志的回调
  * */
